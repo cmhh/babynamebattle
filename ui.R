@@ -1,0 +1,12 @@
+shinyUI(htmlTemplate(filename = "www/index.html",
+  playersel = selectInput("player", "player", choices=c("Jenna", "Chris")),
+  modesel = selectInput("mode", "mode", choices=c("male"="M", "female"="F")),
+  termsel  = selectInput("term", "term limit", choices = c(1:5), selected = 1),
+  name1txt = h3(textOutput("name1")),
+  name2txt = h3(textOutput("name2")),
+  cut1btn  = actionButton("cut1", "scratch"),
+  cut2btn  = actionButton("cut2", "scratch"),
+  vote1btn = actionButton("vote1", "winner!"),
+  vote2btn = actionButton("vote2", "winner!"),
+  standlnk = actionLink("standings", "STANDINGS"),
+  reviewlnk = actionLink("review", "REVIEW")))
